@@ -1,0 +1,68 @@
+.slide-form h2{
+margin-top: 30px;
+color: #d3db8b;
+text-align: center;
+}
+
+
+.slide-form span{
+    color: #83e8f0;
+    text-align: center; 
+}
+
+.headings{
+    display: flex;
+    flex-direction: column;
+}
+.slide-form {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 45%;
+    height: 100%;
+    border-radius: 5px;
+    
+    /* color: #fff; */
+}
+.slide-form input{
+    margin-top: 20px;
+}
+.slide-form .flex_space input:nth-child(odd) {
+    margin-right: 20px;
+}
+.slide-form .submit {
+    background-color: #31b675;
+}
+textarea, input {
+    width: 100%;
+    padding: 20px;
+    outline: none;
+    border: none;
+}
+@media screen and (max-width: 768px) {
+    .slider {
+        height: 65vh;
+    }
+    .slider img {
+        height: 65vh;
+    }
+    .slide-form {
+        left: 10%;
+        top: 30%;
+        width: 90%;
+        height: 55vh;
+    }
+}
+select {
+    text-transform: none;
+    width: 340%;
+    padding: 20px;
+    outline: none;
+    border: none;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.event {
+    width: 156%;
+}

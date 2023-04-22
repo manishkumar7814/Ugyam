@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Reem Kufi", sans-serif !important;
+  }
+  
+  /* nav-body {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+    min-height: 90px;
+  } */
+  .navbar-logo {
+    margin-right: 10%;
+  }
+  .navbar-menu-container {
+    display: inline-block;
+    margin-right: 5%;
+  }
+  .navbar-links-container a {
+    margin-right: 3rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .primary-button {
+    padding: 0.9rem 1.75rem;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  .primary-button:hover {
+    background-color: rgb(234, 234, 234);
+  }
+  .navbar-menu-container svg {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .navbar-right {
+    display: inline-block;
+    flex-direction: row;
+    align-items: right;
+    /* margin-left: 5%; */
+  }
+ 
+  .footer-body {
+    background-color: black;
+    border: 13px grey;
+    margin-top: 70%;
+  }
+  .footer-wrapper {
+    margin: 16rem 10rem;
+    display: flex;
+    margin-top: 10rem;
+    
+    position: relative;
+  }
+  .footer-logo {
+    height: 50%;
+    width: 50%;
+  }
+  .footer-icons {
+    margin-top: 2.5rem;
+  }
+  .footer-icons svg {
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+    color: #585858;
+  }
+  .footer-section-two {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3%;
+  }
+  .footer-section-columns {
+    display: flex;
+    flex-direction: column;
+    min-width: 190px;
+  }
+  .footer-section-columns span {
+    margin: 0.25rem 0rem;
+    font-weight: 600;
+    color: #4c4c4c;
+    cursor: pointer;
+  }
+  
+  
+  @media (max-width: 1000px) {
+    .navbar-links-container a {
+      margin-right: 1rem;
+      font-size: 1rem;
+    }
+    .primary-button {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 800px) {
+    .nav-logo-container {
+      max-width: 140px;
+    }
+    .navbar-links-container {
+      display: none;
+    }
+    .navbar-menu-container {
+      display: flex;
+    }
+    .home-bannerImage-container {
+      max-width: 450px;
+    }
+    .footer-wrapper {
+      flex-direction: column;
+    }
+    .footer-section-two {
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+    .footer-section-columns {
+      margin: 1rem 0rem;
+    }
+    .App {
+      max-width: 95vw;
+    }
+  }
+  @media (max-width: 600px) {
+    .home-bannerImage-container,
+    .about-background-image-container {
+      display: none;
+    }
+  }

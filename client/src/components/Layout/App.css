@@ -11,13 +11,35 @@
     justify-content: space-between;
     min-height: 90px;
   } */
-  .navbar-logo {
-    margin-right: 10%;
+  .nav-display {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
-  .navbar-menu-container {
+  li{
+    float: left;
+  }
+  li a{
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  /* li a:hover{
+    background-color: #111;
+  } */
+  /* .navbar-logo {
+    margin-right: 10%;
+  } */
+  /* .navbar-menu-container {
     display: inline-block;
     margin-right: 5%;
-  }
+  } */
   .navbar-links-container a {
     margin-right: 3rem;
     text-decoration: none;
@@ -42,18 +64,23 @@
   .navbar-menu-container svg {
     font-size: 1.5rem;
     cursor: pointer;
+    overflow: hidden;
   }
   .navbar-right {
     display: inline-block;
-    flex-direction: row;
-    align-items: right;
-    /* margin-left: 5%; */
+    /* flex-direction: row; */
+    /* align-items: right; */
   }
+ .nav-display img{
+  margin-right: 5px;
+  width: 5%;
+  height: 4%;
+ }
  
   .footer-body {
     background-color: black;
     border: 13px grey;
-    margin-top: 70%;
+    /* margin-top: 70%; */
   }
   .footer-wrapper {
     margin: 16rem 10rem;
@@ -133,5 +160,57 @@
     .home-bannerImage-container,
     .about-background-image-container {
       display: none;
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  .login-design{
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 2rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -2;
+      left: -50%;
+      top: -50%;
+      width: 200%;
+      height: 200%;
+      background-color: #399953;
+      background-repeat: no-repeat;
+      background-size: 50% 50%, 50% 50%;
+      background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+      background-image: linear-gradient(#399953, #399953), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+      animation: rotate 4s linear infinite;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 6px;
+      top: 6px;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+      background: white;
+      border-radius: 5px;
+      animation: opacityChange 3s infinite alternate;
+    }
+  }
+  
+  @keyframes opacityChange {
+    50% {
+      opacity:1;
+    }
+    100% {
+      opacity: .5;
     }
   }

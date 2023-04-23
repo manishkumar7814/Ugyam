@@ -1,4 +1,6 @@
 import React, {useState, Component} from "react";
+import Header from "./../components/Layout/Header";
+import Footer from "./../components/Layout/Footer";
 import Layout from "./../components/Layout/Layout";
 import { Link } from "react-router-dom";
 import big from "./../components/Images/big.jpg";
@@ -7,7 +9,6 @@ import corporate from "./../components/Images/corporate.jpg";
 import './Slider.css';
 import BtnSlider from './BtnSlider';
 import dataSlider from './dataSlider';
-import AboutCard from "./AboutCard";
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(1)
@@ -35,6 +36,7 @@ const HomePage = () => {
     }
 
     return (
+      
       <Layout>
         <div className="container-slider">
             {dataSlider.map((obj, index) => {
@@ -114,19 +116,12 @@ const HomePage = () => {
             <Link to="/Corporate" >
               <button className="btn btn-outline-success">See More</button>
             </Link>
-            {/* <a href="#" className="btn btn-outline-success">See More</a> */}
           </div>
           </div>
         </div>
         </div>
-        {/* <Link to="/About"></Link> */}
-        {/* <section className='about top'>
-        <div className='container'>
-          <AboutCard />
-        </div>
-      </section> */}
-        
-    </Layout>
+        {/* <Footer></Footer> */}
+     </Layout>
     )
 };
 

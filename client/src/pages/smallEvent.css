@@ -15,9 +15,9 @@ text-align: center;
     flex-direction: column;
 }
 .slide-form {
-    position: absolute;
-    top: 20%;
+    margin-top: 5%;
     left: 25%;
+    position: relative;
     background-color: rgba(0, 0, 0, 0.7);
     width: 45%;
     height: 100%;
@@ -39,6 +39,11 @@ textarea, input {
     padding: 20px;
     outline: none;
     border: none;
+}
+.flex_spaces{
+    width: 115%;
+    padding: 15px;
+    margin-left: -5%;
 }
 @media screen and (max-width: 768px) {
     .slider {

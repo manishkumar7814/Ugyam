@@ -1,13 +1,14 @@
 import React from "react"
-import Layout from "./../components/Layout/Layout";
+import Header from "../components/Layout/Header";
+import Footer from "../components/Layout/Footer";
 import AllItem from "./AllItem"
 
 const Testimonial = () => {
   return (
     <>
-      <Layout>
+      <Header></Header>
       <AllItem />
-      </Layout>
+      <Footer></Footer>
     </>
   )
 }

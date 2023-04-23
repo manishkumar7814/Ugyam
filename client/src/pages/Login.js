@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./../components/Layout/App.css";
 import Spinner from "../components/Spinner";
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -34,6 +35,7 @@ const Login = () => {
     <>
       <div className="resgister-page ">
         {loading && <Spinner />}
+        <div className="login-design">
         <Form layout="vertical" onFinish={submitHandler}>
           <h1>Login Form</h1>
 
@@ -48,6 +50,7 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
           </div>
         </Form>
+        </div>
       </div>
     </>
   );

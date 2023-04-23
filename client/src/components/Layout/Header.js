@@ -64,32 +64,38 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             {/* <Link className="navbar-brand" to="/"> */}
             <div className="navbar-links-container">
+            <ul className="nav-display">
               {/* <div className="nav-logo"> */}
-            <img src={logo1} width={70} height={35} alt="" margin-right={100}/>
+              <li>
+            <img src={logo1} alt="" /></li>
             {/* </div> */}
             {/* <a href="/HomePage">Home</a> */}
             <div className="navbar-right">
+            <li>
             <Link to="/HomePage">
-            <button className="btn btn-outline-success">Home</button>
-           </Link>
+            <a >Home</a>
+           </Link></li>
+           <li>
             <Link to="/About">
-            <button className="btn btn-outline-success">About</button>
-           </Link>
+            <a >About</a>
+           </Link></li>
+           <li>
             <Link to="/Testimonial">
-            <button className="btn btn-outline-success">Testimonials</button>
-           </Link>
+            <a >Testimonials</a>
+           </Link></li>
+           <li>
             <Link to="/Contact">
-            <button className="btn btn-outline-success">Contacts</button>
-           </Link>
+            <a >Contacts</a>
+           </Link></li>
            {/* <a href="">Testimonials</a> */}
            {/* <a href="">Contact</a> */}
-        <button className="primary-button">Book Now</button>
+        <a >Book Now</a>
            </div>
-        
+           </ul>
       </div>
-      <div className="navbar-menu-container">
+      {/* <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
-      </div>
+      </div> */}
      
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">

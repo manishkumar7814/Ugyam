@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./App.css";
 import { message } from "antd";
-import logo1 from './logo1.webp';
+import logo1 from '../Images/logo1.jpg';
 import { HiOutlineBars3 } from "react-icons/hi2";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
@@ -63,14 +63,10 @@ const Header = () => {
           </button> */}
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             {/* <Link className="navbar-brand" to="/"> */}
+            <img src={logo1} className="logo-img" width={60} height={40} alt="" />
+              
             <div className="navbar-links-container">
-            <ul className="nav-display">
-              {/* <div className="nav-logo"> */}
-              <li>
-            <img src={logo1} alt="" /></li>
-            {/* </div> */}
-            {/* <a href="/HomePage">Home</a> */}
-            <div className="navbar-right">
+            <ul >
             <li>
             <Link to="/HomePage">
             <a >Home</a>
@@ -87,10 +83,9 @@ const Header = () => {
             <Link to="/Contact">
             <a >Contacts</a>
            </Link></li>
-           {/* <a href="">Testimonials</a> */}
-           {/* <a href="">Contact</a> */}
-        <a >Book Now</a>
-           </div>
+           <li>
+           <Link to='#'>
+          <a>Book Now</a></Link></li>
            </ul>
       </div>
       {/* <div className="navbar-menu-container">

@@ -1,10 +1,24 @@
 .Testimonial .box {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    padding: 20px;
     position: relative;
     z-index: 2;
     background-color: white;
     border-radius: 5px;
+  }
+  .box{
+    width: 80%;
+    margin-left: 5%;
+    height: fit-content;
+  }
+  .details{
+    margin-left: 50%;
+    font-size: 100;
+    font: 500;
+  }
+  .para{
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: large;
   }
   .Testimonial .box p {
     font-size: 13px;

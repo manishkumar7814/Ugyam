@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from "../components/Layout/Header";
 import Footer from "../components/Layout/Footer";
+// import axios from "axios";
 import './smallEvent.css';
 
 function Corporate() {
+    const handleSubmit = async (e) =>{
+        e.preventDefault();
+        // console.log(e)
+        // try{
+        //     const { data } = await 
+        // }catch(err){
+        //     console.log(err)
+        // }
+    }
+
+  const [location,setLocation]=useState("placeholder");
+//   console.log(location);
   return (
     <>
     <Header></Header>
@@ -13,7 +26,7 @@ function Corporate() {
             <h2>Plan your Event</h2>
             <span>Search and Book our Services</span>
             </div>
-    <form action='./Corporate'>
+    <form action='./Corporate' onSubmit={handleSubmit}>
         <div className='flex_space'>
         <label >
         <select className='event' >
@@ -28,8 +41,8 @@ function Corporate() {
 
         <div className='flex_space'>
         <label >
-        <select>
-            <option selected value="placeholder">Select venue..</option>
+        <select defaultValue={location} onChange={(e)=>setLocation(e.target.value)}>
+            <option value="placeholder">Select venue..</option>
             <option value="grapefruit">Grapefruit</option>
             <option value="lime">Lime</option>
             <option value="coconut">Coconut</option>

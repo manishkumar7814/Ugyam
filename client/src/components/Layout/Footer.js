@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css"
-import Logo1 from "./logo1.webp";
+import logo1 from '../Images/logo1.jpg';
 import { BsTwitter } from "react-icons/bs";
 import { SiLinkedin } from "react-icons/si";
 import { BsYoutube } from "react-icons/bs";
@@ -12,7 +12,7 @@ const Footer = () => {
     <div className="footer-wrapper">
       <div className="footer-section-one">
         {/* <div className="footer-logo"> */}
-          <img className="footer-logo" src={Logo1} alt="" />
+          <img className="footer-logo" src={logo1} alt="" />
         {/* </div> */}
         <div className="footer-icons">
           <BsTwitter />

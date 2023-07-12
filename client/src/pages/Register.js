@@ -16,7 +16,7 @@ const Register = () => {
       navigate("/login");
     } catch (error) {
       setLoading(false);
-      message.error("something went wrong");
+      message.error("Please check your credential");
     }
   };
 
@@ -24,16 +24,18 @@ const Register = () => {
   useEffect(() => {
     if (localStorage.getItem("user")) {
       navigate("/");
+      message.info("You are already a member");
     }
   }, [navigate]);
   return (
     <>
       <div className="resgister-page ">
         {loading && <Spinner />}
+        <div className="login-design">
         <Form layout="vertical" onFinish={submitHandler}>
-          <h1>Register Form</h1>
+          <h1 className="login-head">Register Form</h1>
           <Form.Item label="Name" name="name">
-            <Input />
+            <Input type="name" />
           </Form.Item>
           <Form.Item label="Email" name="email">
             <Input type="email" />
@@ -42,10 +44,11 @@ const Register = () => {
             <Input type="password" />
           </Form.Item>
           <div className="d-flex justify-content-between">
-            <Link to="/login">Already Register ? Cleck Here to login</Link>
-            <button className="btn btn-primary">Resgiter</button>
+            <Link to="/login">Already Register ? Click Here to login</Link>
+            <button className="btn btn-primary">Register</button>
           </div>
         </Form>
+        </div>
       </div>
     </>
   );

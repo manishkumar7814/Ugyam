@@ -25,7 +25,7 @@
     opacity: 1;
   }
   
-  .btn-slide {
+  /* .btn-slide {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -36,24 +36,13 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  }
+  } */
   
-  .btn-slide img {
+  /* .btn-slide img {
     width: 25px;
     height: 25px;
     pointer-events: none;
-  }
-  .prev {
-    top: 50%;
-    left: 20px;
-    transform: translateY(-60%);
-  }
-  .next {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-60%);
-  }
-  
+  } */
   
   .container-dots {
     position: absolute;
@@ -78,15 +67,177 @@
   .card-main{
     margin: 2rem 5rem;
     display: flex;
-    margin-top: 5rem;
-    
   }
   .overflow {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px;
+    transition: 0.3s;
+    border-radius: 5px;
   }
+  .card_para{
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .card-main {
+      max-width: 100%;
+      display: block;
+      margin-bottom: 20px;
+      margin-left: 0px;
+    }
+    .overflow {
+      width: 100%;
+      display: block;
+      margin-bottom: 15px;
+      margin-left: 0px;
+    }
+  }
+
+   /* Homepage css */
   .heading {
     margin: 2rem;
     text-align: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 60px;
+  }
+
+  .third_head{
+    margin-bottom: 2rem;
+    text-align: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 60px;
+  }
+  .sp{
+    color: blue;
+    font: bold;
+  }
+  .para2{
+    text-align: center;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 2%;
+  }
+  .vhome{
+    padding: 0.25rem;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    margin-left: 3%;
+    margin-right: 54.8%;
+  }
+  .third {
+    background-color: #e6f5fc;
+  }
+  
+  @media (min-width: 768px) {
+    .third .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+  }
+  
+  .third .container .left-content {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+  .third_ul{
+    column-count: 2;
+    column-gap: 30px;
+  }
+  
+  .third .container .right-img {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+
+  @media (max-width: 600px){
+    .third_head {
+      font-size: 24px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .third_ul{
+      column-count: 1;
+      text-align: center;
+      font-size: 5px;
+    }
+    .third_ul li {
+      font-size: 13px;
+  }
+  .third_ul li:hover {
+    text-decoration-color: yellowgreen;
+}
+    .heading{
+      font-size: 24px;
+      text-align: center;
+      font-weight: 500;
+    }
+    video{
+      display: block;
+      max-width: 100%;
+    }
+  }
+  @media(max-width: 900px){
+    video{
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  @media(max-width: 600px){
+     h4{
+      font-size: 24px;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+
+  h4 {
+    margin: 5rem;
+    text-align: center;
+    font-weight: 200;
+  }
+  .five_para{
+    font-size: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .user-review{
+    background: url("https://previews.123rf.com/images/melpomen/melpomen1902/melpomen190200229/118385995-review-with-blurred-city-abstract-lights-background.jpg");
+    margin-top: 3%;
+    /* background-position: calc(100% + 500vh ); */
+    background-size: 100vh;
+  }
+  .review-form{  
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border: 2px solid grey;
+    margin-left: 28%;
+    margin-right: 28%;
+    
+  }
+  .review-form h7{
+    margin-left: 5%;
+    float: left;
+  }
+
+  @media (max-width:600px){
+    .review-form{
+      margin: 0px;
+      width: 100%;
+    }
+    .user-review{
+      width: 100%;
+    }
+    .card{
+      width:100%;
+      margin: 0;
+    }
   }

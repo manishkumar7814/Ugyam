@@ -7,7 +7,8 @@ import BigEvents from "./pages/Bigevent";
 import Corporate from "./pages/Corporate";
 import About from "./pages/About";
 import Testimonial from "./pages/Testimonial"
-import Contact from "./pages/Contact"
+import Contact from "./pages/Contact";
+import Vendors from "./pages/Vendors";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/Corporate" element={<Corporate/>} />
         <Route path="/About" element={<About/>} />
         <Route path="/Testimonial" element={<Testimonial/>} />
+        <Route path="/Vendors" element={<Vendors/>} />
         <Route path="/Contact" element={<Contact/>} />
         <Route path="/HomePage" element={<HomePage/>} />
       </Routes>

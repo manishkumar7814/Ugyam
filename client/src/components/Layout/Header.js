@@ -45,6 +45,16 @@ const Header = () => {
     },
     
   ];
+  const handleAnchorClick = event => {
+    // 👇 use event.preventDefault() if you want to
+    // prevent navigation
+    // event.preventDefault();
+
+    console.log('Anchor element clicked');
+
+    // 👇 refers to the link element
+    console.log(event.currentTarget);
+  };
 
   return (
     <>
@@ -76,8 +86,10 @@ const Header = () => {
             <a >About</a>
            </Link></li>
            <li>
-            <Link to="/Testimonial">
-            <a >Testimonials</a>
+            {/* <Link to="/Testimonial">
+            <a >Testimonials</a> */}
+            <Link to="/Vendors">
+              <a>Vendors</a>
            </Link></li>
            <li>
             <Link to="/Contact">
@@ -85,7 +97,10 @@ const Header = () => {
            </Link></li>
            <li>
            <Link to='#'>
-          <a>Book Now</a></Link></li>
+          <a onClick={handleAnchorClick}
+        href="https://bobbyhadz.com"
+        target="_blank"
+        rel="noreferrer">Book Now</a></Link></li>
            </ul>
       </div>
       {/* <div className="navbar-menu-container">

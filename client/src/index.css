@@ -7,10 +7,8 @@
 .content {
   height: 80vh;
 }
-
-.resgister-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
+.container{
+  width: var(--container-width-lg);
+  margin: 0 auto;
 }
+

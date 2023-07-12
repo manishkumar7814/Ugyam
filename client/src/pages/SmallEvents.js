@@ -20,7 +20,7 @@ function SmallEvents() {
         <form action='./SmallEvents'>
             <div className='flex_space'>
             <label >
-            <select className='event'  >
+            <select className='event'>
                 <option selected value="placeholder" >Choose Event scale i.e, small, big or corporate</option>
                 <option value="grapefruit">Grapefruit</option>
                 <option value="lime">Lime</option>

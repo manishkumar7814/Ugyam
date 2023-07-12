@@ -13,7 +13,7 @@ const Login = () => {
       setLoading(true);
       const { data } = await axios.post("/users/login", values);
       setLoading(false);
-      message.success("login success");
+      message.success("Welcome!!");
       localStorage.setItem(
         "user",
         JSON.stringify({ ...data.user, password: "" })
@@ -37,7 +37,7 @@ const Login = () => {
         {loading && <Spinner />}
         <div className="login-design">
         <Form layout="vertical" onFinish={submitHandler}>
-          <h1>Login Form</h1>
+          <h1 className="login-head">Login Form</h1>
 
           <Form.Item label="Email" name="email">
             <Input type="email" />
@@ -46,7 +46,7 @@ const Login = () => {
             <Input type="password" />
           </Form.Item>
           <div className="d-flex justify-content-between">
-            <Link to="/register">Not a user ? Cleck Here to regsiter</Link>
+            <Link to="/register">Not a user ? Click Here to register</Link>
             <button className="btn btn-primary">Login</button>
           </div>
         </Form>

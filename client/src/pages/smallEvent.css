@@ -23,7 +23,6 @@ text-align: center;
     height: 100%;
     border-radius: 5px;
     
-    /* color: #fff; */
 }
 .slide-form input{
     margin-top: 20px;
@@ -61,7 +60,7 @@ textarea, input {
 }
 select {
     text-transform: none;
-    width: 340%;
+    width: 322%;
     padding: 20px;
     outline: none;
     border: none;
@@ -69,5 +68,5 @@ select {
     margin-top: 20px;
 }
 .event {
-    width: 156%;
+    width: 148%;
 }

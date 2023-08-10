@@ -201,3 +201,59 @@
   .bag-icon {
     color: #535353;
   }
+
+
+
+ .dcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 2%;
+  /* margin-left: 20%; */
+  text-align: center;
+  font-family: arial;
+  float: right;
+  width: 25%;
+  /* padding: 0 10px; */
+
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.dcard button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.dcard button:hover {
+  opacity: 0.7;
+}
+.drow {
+  margin: 0 -5px;
+  margin-left: 20%;
+  margin-top: -80%;
+}
+
+/* Clear floats after the columns */
+.drow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .dcard {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

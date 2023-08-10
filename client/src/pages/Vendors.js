@@ -1,80 +1,57 @@
-import { useState } from "react";
-import Header from "../components/Layout/Header"
-import Products from "./Products";
-import products from "./Vendordata";
-import Recommended from "./Recommended";
-import Sidebar from "./Sidebar";
-import Vendorcard from "./Vendorcard";
+import {useState, useEffect} from 'react';
+import Papa from 'papaparse';
+import Data from './users.csv';
+import Header from "../components/Layout/Header";
+import Footer from "../components/Layout/Footer";
+import Sidebar from './Sidebar';
 import "./Vendors.css";
 
-function Vendors() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+function Vendors(){
+  const [data, setdata] = useState([]);
 
-  // ----------- Input Filter -----------
-  const [query, setQuery] = useState("");
+  useEffect(() => {
+    const fetchData = async () =>{
+      const response = await fetch(Data);
+      const reader = response.body.getReader();
+      const result = await reader.read();
+      const decorder = new TextDecoder("utf-8");
+      const csvData = decorder.decode(result.value);
+      
+      
+      const parsedData = Papa.parse(csvData, {
+        header: true,
+        skipEmptyLines: true
+      }).data;
+      setdata(parsedData);
+    };
+    fetchData();
+  }, []);
 
-  const handleVendorinputChange = (event) => {
-    setQuery(event.target.value);
-  };
 
-  const filteredItems = products.filter(
-    (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  const listItems = data.map((item) =>
+        <div className="dcard" key={item.id}>
+            <div className="card_img">
+                <img src={item.thumb} />
+            </div>
+            <div className="card_header">
+                <h2>{item.user_id}</h2>
+                <p>{item.Occupation}</p>
+                <p className="price">{item.Income_Level}<span>{item.currency}</span></p>
+                <div className="btn">Add to cart</div>
+            </div>
+        </div>
   );
-
-  // ----------- Radio Filtering -----------
-  const handleChange = (event) => {
-    setSelectedCategory(event.target.value);
-  };
-
-  // ------------ Button Filtering -----------
-  const handleClick = (event) => {
-    setSelectedCategory(event.target.value);
-  };
-
-  function filteredData(products, selected, query) {
-    let filteredProducts = products;
-
-    // Filtering Input Items
-    if (query) {
-      filteredProducts = filteredItems;
-    }
-
-    // Applying selected filter
-    if (selected) {
-      filteredProducts = filteredProducts.filter(
-        ({ category, color, company, newPrice, title }) =>
-          category === selected ||
-          color === selected ||
-          company === selected ||
-          newPrice === selected ||
-          title === selected
-      );
-    }
-
-    return filteredProducts.map(
-      ({ img, title, star, reviews, prevPrice, newPrice }) => (
-        <Vendorcard
-          key={Math.random()}
-          img={img}
-          title={title}
-          star={star}
-          reviews={reviews}
-          prevPrice={prevPrice}
-          newPrice={newPrice}
-        />
-      )
-    );
-  }
-
-  const result = filteredData(products, selectedCategory, query);
 
   return (
-    <>
+        <>
       <Header/>
-      <Sidebar handleChange={handleChange} />
-      <Recommended handleClick={handleClick} />
-      <Products result={result} />
-    </>
-  );
+      <Sidebar />
+    <div className='drow'>
+    {listItems}
+    </div>
+    <Footer />
+  </>
+  )
 }
-export default Vendors
+
+export default Vendors;

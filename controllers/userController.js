@@ -42,7 +42,8 @@ const reviewController = async (req, res) => {
   try {
     console.log(req.body);
     const{name,post,review} = req.body;
-    const newReview = new reviewModel({name,post,review});
+    console.log(name,post,review);
+    const newReview = new reviewModel({name,post,review,profile:null});
     const treview = await newReview.save();
     // await newReview.save();
     res.status(201).json({

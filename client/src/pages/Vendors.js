@@ -3,8 +3,11 @@ import Papa from 'papaparse';
 import Data from './users.csv';
 import Header from "../components/Layout/Header";
 import Footer from "../components/Layout/Footer";
+import { Link} from "react-router-dom";
 import Sidebar from './Sidebar';
+import Recommended from './Recommended';
 import "./Vendors.css";
+import Booking from "./Booking";
 
 function Vendors(){
   const [data, setdata] = useState([]);
@@ -37,7 +40,9 @@ function Vendors(){
                 <h2>{item.user_id}</h2>
                 <p>{item.Occupation}</p>
                 <p className="price">{item.Income_Level}<span>{item.currency}</span></p>
+                <Link to="/Booking" >
                 <div className="btn">Add to cart</div>
+                </Link>
             </div>
         </div>
   );
@@ -45,7 +50,7 @@ function Vendors(){
   return (
         <>
       <Header/>
-      <Sidebar />
+      <Recommended />
     <div className='drow'>
     {listItems}
     </div>

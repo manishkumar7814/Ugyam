@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import Footer from "./../components/Layout/Footer";
 import Layout from "./../components/Layout/Layout";
-import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import big from "./../components/Images/big.jpg";
 import small from "./../components/Images/small.jpg";
@@ -11,29 +10,15 @@ import './Slider.css';
 import dataSlider from './dataSlider';
 import video from "./../components/Images/video.mp4";
 import Testimonial from "./Testimonial";
-import axios from "axios";
-import Spinner from "../components/Spinner";
+import Review from "./Review";
 
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0)
   const timeoutRef = useRef(null);
   const delay = 2500;
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
 
-  const submitHandler = async (values) => {
-    try {
-      setLoading(true);
-      await axios.post("/review/homepage", values);
-      // console.log(values);
-      message.success("Reviewed Successfully");
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      message.error("Please fill all required fields");
-    }
-  };
+  
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -57,11 +42,6 @@ const HomePage = () => {
         setSlideIndex(index)
     }
 
-    useEffect(() => {
-      if (!localStorage.getItem("user")) {
-        message.error("Please login to review");
-      }
-    }, [navigate]);
 
     return (
       
@@ -300,26 +280,9 @@ const HomePage = () => {
         <div className="title">
         <h3>Please&nbsp;<span className="sp">review</span>&nbsp;our <span className="sp">Services</span></h3>
       </div>
-        <div className="user-review">
-      <div className="review-form">
-          <Form layout="vertical" onFinish={submitHandler}>
-          <Form.Item name="name">
-            <Input type="name" placeholder="Please enter your name" required />
-          </Form.Item>
-          <Form.Item name="post">
-            <Input type="post" placeholder="Designation like student, Developer,.." required/>
-          </Form.Item>
-          <Form.Item name="review">
-            <Input type="review" placeholder="Please write your valuable review" required/>
-          </Form.Item>
-          <Form.Item name="upImg" label="Please upload your image: ">
-            <Input type="file" className="filename" ></Input>
-          </Form.Item>
-            <button type="submit" className="secondary-button">Review</button>
-            </Form>
-            </div>
-        </div>
-
+        
+          {/* <Review></Review> */}
+          <Link to="/Review">Already Register ? Click Here to login</Link>
         <Footer></Footer>
      </Layout>
     )

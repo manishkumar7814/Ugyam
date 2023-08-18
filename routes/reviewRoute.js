@@ -1,12 +1,14 @@
 const express = require("express");
 const {
   reviewController,
-} = require("../controllers/userController");
+} = require("../controllers/reviewController");
 
 //router object
 const router = express.Router();
 
 
 //POST || REVIEW USER
-router.post("/homepage", reviewController);
+router.post("/feedback", reviewController);
+
+
 module.exports = router;

@@ -1,19 +1,34 @@
-import Button from "./Button";
 import "./Vendors.css";
 
-const Recommended = ({ handleClick }) => {
+const Recommended = () => {
   return (
     <>
       <div>
-        <h2 className="recommended-title">Events</h2>
         <div className="recommended-flex">
-          <Button onClickHandler={handleClick} value="" title="All Events" />
-          <Button onClickHandler={handleClick} value="Small Party" title="Small Party" />
-          <Button onClickHandler={handleClick} value="Adidas" title="Medium Events" />
-          <Button onClickHandler={handleClick} value="Puma" title="Big Events" />
-          <Button onClickHandler={handleClick} value="Vans" title="Marriage" />
+        <label for="rchoice">category</label>
+          <select id="rchoice">
+          <option value=""> -- Select category --</option>
+          <option value="photographer"> Photographer</option>
+          <option value="catering"> catering</option>
+          <option value="Decoration"> Decoration</option>
+          </select>
+          <label for="rchoice">Price</label>
+          <select id="rchoice">
+          <option value=""> -- Select Price Range --</option>
+          <option value="20000">Under 20000</option>
+          <option value="50000"> 20000 - 50000</option>
+          <option value="100000">50000- 100000</option>
+          <option value="500000">Above 100000</option>
+          </select>
+          <label for="rchoice">Location</label>
+          <select id="rchoice">
+          <option value=""> --Select Location --</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Patna">Patna</option>
+          </select>
+          </div>
         </div>
-      </div>
     </>
   );
 };

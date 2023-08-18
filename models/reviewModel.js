@@ -11,19 +11,18 @@ const reviewSchema = new mongoose.Schema(
         required: [true, "email is required and should be unique"],
         unique: true,
       },
-      review: {
+      reviewed: {
         type: String,
         required: [true, "password is required"],
       },
-      profile: {
-        type: File,
-        required: [false],
-      },
+      // profile: {
+      //   type: File
+      // },
     },
     { timestamps: true }
   );
   
   //export
-  const reviewModel = mongoose.model("review", reviewSchema);
+  const reviewModel = mongoose.model('review', reviewSchema);
   module.exports = reviewModel;
   

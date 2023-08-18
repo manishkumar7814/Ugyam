@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Testimonial from "./pages/Testimonial"
 import Contact from "./pages/Contact";
 import Vendors from "./pages/Vendors";
+import Review from "./pages/Review";
 
 function App() {
   return (
@@ -24,14 +25,15 @@ function App() {
         />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/SmallEvents" element={<SmallEvents/>} />
+        {/* <Route path="/SmallEvents" element={<SmallEvents/>} />
         <Route path="/BigEvent" element={<BigEvents/>} />
-        <Route path="/Corporate" element={<Corporate/>} />
+        <Route path="/Corporate" element={<Corporate/>} /> */}
         <Route path="/About" element={<About/>} />
-        <Route path="/Testimonial" element={<Testimonial/>} />
+        {/* <Route path="/Testimonial" element={<Testimonial/>} /> */}
         <Route path="/Vendors" element={<Vendors/>} />
         <Route path="/Contact" element={<Contact/>} />
         <Route path="/HomePage" element={<HomePage/>} />
+        <Route path="/Review" element={<Review />} />
       </Routes>
     </>
   );

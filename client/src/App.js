@@ -23,17 +23,15 @@ function App() {
             </ProtectedRoutes>
           }
         />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={user? <Navigate replace to="/" /> :<Register />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/SmallEvents" element={<SmallEvents/>} />
         <Route path="/BigEvent" element={<BigEvents/>} />
         <Route path="/Corporate" element={<Corporate/>} /> */}
         <Route path="/About" element={<About/>} />
-        {/* <Route path="/Testimonial" element={<Testimonial/>} /> */}
-        <Route path="/Vendors" element={<Vendors/>} />
-        <Route path="/Contact" element={<Contact/>} />
+        <Route path="/Vendors" element={user? <Vendors/> : <Login />} />
+        <Route path="/Contact" element={user? <Contact/> : <Login />} />
         <Route path="/HomePage" element={<HomePage/>} />
-        <Route path="/Review" element={<Review />} />
+        <Route path="/Review" element={user? <Review /> :<Login />} />
       </Routes>
     </>
   );
